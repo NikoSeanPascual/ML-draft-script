@@ -37,6 +37,7 @@ body.fade::after { opacity: 1;}
     box-shadow: 0 0 20px #38bdf8;
     display: flex;
     flex-direction: column;
+    min-height: 400px;
     gap: 12px;
 }
 h1 {
@@ -79,3 +80,26 @@ button:hover {background: #0ea5e9; transform: scale(1.05); box-shadow: 0 0 10px 
 #temperature {font-size: 1.5rem; margin-top: 10px;}
 #description {font-size: 1.3rem; margin-top: 5px; text-transform: capitalize;}
 #error {margin-top: 10px; font-size: 1.2rem; color: #ef4444; text-shadow: 0 0 5px #ef4444;}
+/*DETAILS*/
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 1.1rem;
+}
+#feelsLike {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+/*ICONS*/
+#weatherIcon {
+    image-rendering: crisp-edges;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 0 auto;
+    filter: drop-shadow(0 0 8px #38bdf8);
+    filter: invert(100%);
+}
