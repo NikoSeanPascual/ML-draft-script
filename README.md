@@ -67,9 +67,9 @@ const apiKey = "YOUR_API_KEY_HERE";
 ## 📌 Future Improvements
 
 1. 🌦️ Core Weather Enhancements
-    * Add feels like temperature
-    * Show humidity
-    * Show wind speed & direction
+    * Add feels like temperature ✅ FINISHED 04/30/26
+    * Show humidity ✅ FINISHED 04/30/26
+    * Show wind speed & direction ✅ FINISHED 04/30/26
     * Display pressure
     * Add visibility
     * Show UV index
