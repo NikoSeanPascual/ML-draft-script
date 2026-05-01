@@ -71,9 +71,9 @@ const apiKey = "YOUR_API_KEY_HERE";
     * Add feels like temperature ✅ FINISHED 04/30/26
     * Show humidity ✅ FINISHED 04/30/26
     * Show wind speed & direction ✅ FINISHED 04/30/26
-    * Display pressure
-    * Add visibility
-    * Show UV index
+    * Display pressure ✅ FINISHED 05/01/26
+    * Add visibility ✅ FINISHED 05/01/26
+    * Show UV index ✅ FINISHED 05/01/26
     * Add dew point
     * Display sunrise & sunset times
     * Add air quality index (AQI)
