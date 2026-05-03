@@ -3,39 +3,51 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
-    <title>Niko's Weather Website</title>
+    <title>Niko's Weather App</title>
 </head>
 <body>
+
 <h1>Niko's Weather App</h1>
 
 <div id="weather">
     <input type="text" id="cityInput" placeholder="Enter city name">
     <button onclick="getWeather()">Search</button>
 
-    <img id="weatherIcon" src="" alt="Weather Icon" style="display: none;">
+    <img id="weatherIcon" style="display:none;">
 
     <h2 id="cityName"></h2>
     <p id="temperature"></p>
     <p id="feelsLike"></p>
+    <p id="description"></p>
+    <p id="rainChance"></p>
 
     <div class="weather-details">
         <p id="humidity"></p>
         <p id="wind"></p>
     </div>
+
     <div class="weather-details secondary">
         <p id="pressure"></p>
         <p id="visibility"></p>
         <p id="uvIndex"></p>
     </div>
 
-    <p id="description"></p>
+    <div class="weather-details tertiary">
+        <p id="dewPoint"></p>
+        <p id="aqi"></p>
+        <div class="sun-times">
+            <p id="sunrise"></p>
+            <p id="sunset"></p>
+        </div>
+    </div>
+
     <p id="error"></p>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
-
