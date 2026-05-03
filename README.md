@@ -74,11 +74,11 @@ const apiKey = "YOUR_API_KEY_HERE";
     * Display pressure ✅ FINISHED 05/01/26
     * Add visibility ✅ FINISHED 05/01/26
     * Show UV index ✅ FINISHED 05/01/26
-    * Add dew point **WIP TOMORROW**
-    * Display sunrise & sunset times
-    * Add air quality index (AQI)
-    * Show chance of rain (%)\
-    * Add weather icons (from API)
+    * Add dew point ✅ FINISHED 05/03/26
+    * Display sunrise & sunset times ✅ 05/03/26
+    * Add air quality index (AQI) ✅ 05/03/26
+    * Show chance of rain (%)\ ✅ 05/03/26
+    * Add weather icons (from API) ✅ 05/03/26
 2. 📊 Forecast Features
     * 5-day forecast
     * Hourly forecast (next 24–48 hours)
