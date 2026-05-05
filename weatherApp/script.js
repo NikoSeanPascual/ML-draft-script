@@ -220,3 +220,4 @@ async function getForecastData(city) {
         console.error("Forecast fetch failed", e);
     }
 }
+
