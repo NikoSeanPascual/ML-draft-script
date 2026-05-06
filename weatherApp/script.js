@@ -1,5 +1,12 @@
 //  GO TO https://openweathermap.org/api abd sign up to get your API key and replace this
 const apiKey = "f37d5bb25dd2a510c04d31a694d8d329";
+let tempChart = null;
+let rainChart = null;
+let windChart = null;
+
+// Configure Chart.js default text color to match your app
+Chart.defaults.color = '#e2e8f0';
+Chart.defaults.font.family = '"Jersey 10", cursive';
 
 // HELPER FUNCTIONS
 function formatTime(unix, timezone) {
@@ -79,7 +86,7 @@ function displayWeather(data) {
         if (el) el.innerText = text;
     };
 
-    // Text Updates
+    // TEXT UPDATES
     update("cityName", data.name);
     update("temperature", `Temp: ${temp.toFixed(1)}°C`);
     update("feelsLike", `Feels like: ${data.main.feels_like.toFixed(1)}°C`);
@@ -125,38 +132,42 @@ function showError(message) {
         const el = document.getElementById(id);
         if (el) el.innerText = "";
     });
+
     const rain = document.getElementById("rainChance");
     if (rain) rain.innerText = "";
+
     const forecast = document.getElementById("forecastContainer");
     if (forecast) forecast.style.display = "none";
+
+    const charts = document.getElementById("chartsContainer");
+    if (charts) charts.style.display = "none";
 }
 
 function changeBackground(temp) {
     let color, gradient;
 
     if (temp <= 10) {
-        color = "#38bdf8"; // Cold Blue
+        color = "#38bdf8";
         gradient = "linear-gradient(135deg, #0ea5e9, #1e3a8a)";
     } else if (temp <= 20) {
-        color = "#4ade80"; // Fresh Green
+        color = "#4ade80";
         gradient = "linear-gradient(135deg, #22c55e, #065f46)";
     } else if (temp <= 30) {
-        color = "#fbbf24"; // Warm Amber
+        color = "#fbbf24";
         gradient = "linear-gradient(135deg, #f59e0b, #b45309)";
     } else {
-        color = "#f87171"; // Hot Red
+        color = "#f87171";
         gradient = "linear-gradient(135deg, #ef4444, #7f1d1d)";
     }
 
-    // 1. Update the CSS Variables for the whole UI
+    // UPDATE THE CSS VARIABLES FOR THE WHOLE UI
     document.documentElement.style.setProperty('--accent-color', color);
     document.body.style.setProperty("--next-bg", gradient);
 
-    // 2. Trigger the Fade Transition
+    // TRIGGER THE FADE TRANSITION
     document.body.classList.add("fade");
 
     setTimeout(() => {
-        // Set the current background to the new one after fade completes
         document.styleSheets[0].addRule("body::before", `background: ${gradient}`);
         document.body.classList.remove("fade");
     }, 1500);
@@ -176,12 +187,22 @@ async function getForecastData(city) {
         // HOURLY FORECAST (Next 24 hours = next 8 items from the API)
         const hourlyData = data.list.slice(0, 8);
 
+        // DATA FOR CHART
+        const labels = [];
+        const temps = [];
+        const rainProbs = [];
+        const windSpeeds = [];
+
         hourlyData.forEach(item => {
             const timeObj = new Date(item.dt * 1000);
-            // Get time like "14:00"
             const timeString = timeObj.getHours().toString().padStart(2, '0') + ":00";
             const temp = Math.round(item.main.temp);
             const iconCode = item.weather[0].icon;
+
+            labels.push(timeString);
+            temps.push(temp);
+            rainProbs.push(Math.round(item.pop * 100));
+            windSpeeds.push(item.wind.speed);
 
             const card = document.createElement("div");
             card.className = "hourly-card";
@@ -192,7 +213,8 @@ async function getForecastData(city) {
             `;
             hourlyContainer.appendChild(card);
         });
-
+        // CHARTS TRIGGER
+        renderCharts(labels, temps, rainProbs, windSpeeds);
         // 5-DAY OVERVIEW
         const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
@@ -221,3 +243,77 @@ async function getForecastData(city) {
     }
 }
 
+function renderCharts(labels, temps, rainProbs, windSpeeds) {
+    if (tempChart) tempChart.destroy();
+    if (rainChart) rainChart.destroy();
+    if (windChart) windChart.destroy();
+
+    const commonOptions = {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { grid: { color: 'rgba(255, 255, 255, 0.1)' } },
+            y: { grid: { color: 'rgba(255, 255, 255, 0.1)' } }
+        }
+    };
+
+    // TEMPERATURE CHART
+    const ctxTemp = document.getElementById('tempChart').getContext('2d');
+    tempChart = new Chart(ctxTemp, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Temp (°C)',
+                data: temps,
+                borderColor: '#facc15',
+                backgroundColor: 'rgba(250, 204, 21, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: { ...commonOptions, plugins: { title: { display: true, text: 'Temperature (°C)' } } }
+    });
+
+    // RAIN PROBABILITY CHART
+    const ctxRain = document.getElementById('rainChart').getContext('2d');
+    rainChart = new Chart(ctxRain, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Rain Chance (%)',
+                data: rainProbs,
+                backgroundColor: '#38bdf8',
+                borderRadius: 4
+            }]
+        },
+        options: {
+            ...commonOptions,
+            scales: { ...commonOptions.scales, y: { beginAtZero: true, max: 100, grid: { color: 'rgba(255, 255, 255, 0.1)' } } },
+            plugins: { title: { display: true, text: 'Rain Probability (%)' } }
+        }
+    });
+
+    // WIND SPEED CHART
+    const ctxWind = document.getElementById('windChart').getContext('2d');
+    windChart = new Chart(ctxWind, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Wind (m/s)',
+                data: windSpeeds,
+                borderColor: '#4ade80',
+                backgroundColor: 'rgba(74, 222, 128, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: { ...commonOptions, plugins: { title: { display: true, text: 'Wind Speed (m/s)' } } }
+    });
+
+    document.getElementById("chartsContainer").style.display = "block";
+}
