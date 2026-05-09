@@ -88,14 +88,14 @@ const apiKey = "YOUR_API_KEY_HERE";
     * Rain probability chart ✅ FINISHED 05/06/26
     * Wind speed graph ✅ FINISHED 05/06/26
 3. 📍 Detect user location (Geolocation API)
-    * “Use my location” button ✅ FINISHED 05/07/26 (will get improved tomorrow)
-    * Save favorite cities ✅ FINISHED 05/07/26 (will get improved tomorrow)
-    * Recently searched cities ✅ FINISHED 05/07/26 (will get improved tomorrow)
-    * Default city on load
-    * Multiple city comparison view
-4. 🎨 UI / UX Improvements
-    * Dark / Light mode toggle
-    * Animated weather effects (rain, snow, clouds)
+    * “Use my location” button ✅ FINISHED 05/07/26 
+    * Save favorite cities ✅ FINISHED 05/07/26
+    * Recently searched cities ✅ FINISHED 05/07/26
+    * Default city on load  ✅ FINISHED 05/09/26
+    * Multiple city comparison view ✅ FINISHED 05/09/26
+4. 🎨 UI / UX Improvements 
+    * Dark / Light mode toggle 
+    * Animated weather effects (rain, snow, clouds) 
     * Smooth loading skeleton UI
     * Weather-based icons and backgrounds
     * Responsive design improvements
