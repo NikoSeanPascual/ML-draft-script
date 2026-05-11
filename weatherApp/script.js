@@ -8,7 +8,6 @@ let recents = JSON.parse(localStorage.getItem("weatherRecents")) || [];
 let currentCity = "";
 let defaultCity = localStorage.getItem("weatherDefaultCity") || "";
 
-// Configure Chart.js default text color to match your app
 Chart.defaults.color = '#e2e8f0';
 Chart.defaults.font.family = '"Jersey 10", cursive';
 
@@ -72,15 +71,117 @@ async function getRainChance(city) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=1&appid=${apiKey}`);
         const data = await response.json();
+
         const pop = data.list[0].pop * 100;
-        document.getElementById("rainChance").innerText = `Rain Chance: ${pop.toFixed(0)}%`;
+        const rainEl = document.getElementById("rainChance");
+
+        if (rainEl) {
+            rainEl.innerText = `Rain Chance: ${pop.toFixed(0)}%`;
+
+            if (pop > 50) {
+                rainEl.style.color = "var(--accent-color)";
+                rainEl.style.fontWeight = "bold";
+            } else {
+                rainEl.style.color = "#94a3b8";
+                rainEl.style.fontWeight = "normal";
+            }
+        }
     } catch (e) {
-        document.getElementById("rainChance").innerText = "Rain Chance: N/A";
+        const rainEl = document.getElementById("rainChance");
+        if (rainEl) rainEl.innerText = "Rain Chance: N/A";
+    }
+}
+
+function toggleTheme() {
+    const body = document.body;
+    const themeBtn = document.querySelector(".theme-switch");
+
+    // SPIN ANIMATION CLASS
+    themeBtn.classList.add("active");
+    setTimeout(() => themeBtn.classList.remove("active"), 500);
+
+    body.classList.toggle("light-mode");
+
+    const isLight = body.classList.contains("light-mode");
+    document.getElementById("theme-icon").innerText = isLight ? "☀️" : "🌙";
+
+    if (tempChart) {
+        const textColor = isLight ? '#1e293b' : '#e2e8f0';
+        Chart.defaults.color = textColor;
+        getWeather();
+    }
+
+    localStorage.setItem("weatherTheme", isLight ? "light" : "dark");
+}
+
+function clearList(type) {
+    if (confirm(`Are you sure you want to clear your ${type}?`)) {
+        if (type === 'favorites') {
+            favorites = [];
+            localStorage.setItem("weatherFavs", JSON.stringify(favorites));
+        } else {
+            recents = [];
+            localStorage.setItem("weatherRecents", JSON.stringify(recents));
+        }
+        renderListUI();
+    }
+}
+
+function updateWeatherEffects(weatherMain) {
+    const container = document.getElementById("weather-effects");
+    container.innerHTML = "";
+
+    if (weatherMain === "Rain" || weatherMain === "Drizzle") {
+        // CREATE 60 RAINDROPS FOR A HEAVIER RAINS
+        for (let i = 0; i < 60; i++) {
+            let drop = document.createElement("div");
+            drop.className = "rain";
+
+            // SPREAD THEM SLIGHTLY WIDER (-10% to 110%) SO WIND DOESN'T PUSH THEM OUT OF FRAME
+            drop.style.left = (Math.random() * 120 - 10) + "%";
+
+            // RANDOMIZE DROP LENGTH (10px to 25px)
+            drop.style.height = (Math.random() * 15 + 10) + "px";
+
+            // RANDOMIZE FALL SPEED
+            drop.style.animationDuration = (Math.random() * 0.4 + 0.4) + "s";
+            drop.style.animationDelay = (Math.random() * 2) + "s";
+
+            container.appendChild(drop);
+        }
+    } else if (weatherMain === "Snow") {
+        // 40 SNOWFLAKES
+        for (let i = 0; i < 40; i++) {
+            let flake = document.createElement("div");
+            flake.className = "snow";
+
+            // RANDOMIZE SIZE (2px to 7px)
+            let size = Math.random() * 5 + 2;
+            flake.style.width = size + "px";
+            flake.style.height = size + "px";
+            flake.style.left = (Math.random() * 110 - 5) + "%";
+
+            // FALL SPEED (3s to 6s - much slower than rain)
+            let fallDuration = (Math.random() * 3 + 3);
+            // SWAY SPEED (half the fall speed for a nice rhythm)
+            let swayDuration = fallDuration / 2;
+
+            flake.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+            flake.style.animationDelay = `${Math.random() * 3}s, ${Math.random() * 2}s`;
+
+            if (size < 4) {
+                flake.style.filter = "blur(2px)";
+                flake.style.zIndex = "-1";
+            }
+
+            container.appendChild(flake);
+        }
     }
 }
 
 function displayWeather(data) {
     updateCityLists(data.name);
+    updateWeatherEffects(data.weather[0].main);
     const { lat, lon } = data.coord;
     const timezone = data.timezone;
     const temp = data.main.temp;
@@ -97,7 +198,6 @@ function displayWeather(data) {
     update("feelsLike", `Feels like: ${data.main.feels_like.toFixed(1)}°C`);
     update("description", `Condition: ${data.weather[0].description}`);
 
-    // NEW: Fetch Rain Chance using the city name
     getRainChance(data.name);
 
     update("humidity", `Humidity: ${humidity}%`);
@@ -440,20 +540,19 @@ function setDefaultCity() {
     localStorage.setItem("weatherDefaultCity", currentCity);
     alert(`${currentCity} set as your home city!`);
 }
-// Initialize App
+// INITIALIZE APP
 async function initApp() {
     renderListUI();
+    if (localStorage.getItem("weatherTheme") === "light") toggleTheme();
 
     if (defaultCity) {
-        // Load the saved home city
         fetchWeatherByCity(defaultCity);
     } else {
-        // Fallback: Try geolocation or leave blank
         getLocation();
     }
 }
 
-// Helper to fetch weather without needing the input field value
+// HELPER TO FETCH WEATHER
 async function fetchWeatherByCity(city) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);

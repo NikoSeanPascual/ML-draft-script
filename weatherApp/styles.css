@@ -170,4 +170,121 @@ button:hover { filter: brightness(1.2); transform: scale(1.02); box-shadow: 0 0 
 .compare-card:hover { transform: translateY(-5px); }
 .compare-card h5 { color: #facc15; font-size: 1.1rem; margin-bottom: 5px; }
 .compare-card .comp-temp { font-size: 1.4rem; color: #fff; }
-.compare-card .comp-desc { font-size: 0.8rem; color: #94a3b8; text-transform: capitalize; }  /*this is getting complicated I swear to do my best*/
+.compare-card .comp-desc { font-size: 0.8rem; color: #94a3b8; text-transform: capitalize; }
+
+
+/* LIGHT MODE OVERRIDES */
+body.light-mode {--bg-dark: #f1f5f9; color: #1e293b;}
+body.light-mode #weather {background: rgba(255, 255, 255, 0.8); border-color: var(--accent-color); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);}
+
+/* THEME TOGGLE STYLING */
+body, #weather, h1, h2, p, input, button, .city-chip, .hourly-card, .daily-card, .compare-card, .list-section h4 {
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.6s ease,
+                border-color 0.8s ease,
+                box-shadow 0.8s ease;
+}
+
+/* BETTER POSITIONING */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s, border-color 0.8s ease;
+}
+.theme-switch:hover {transform: scale(1.15) rotate(15deg); background: rgba(255, 255, 255, 0.25);}
+.theme-switch span {transition: transform 0.5s ease; display: inline-block;}
+.theme-switch.active span {transform: rotate(360deg);}
+/* LIGHT MODE ADJUSTMENTS */
+body.light-mode {--bg-dark: #ffffff; background-color: #f0f2f5; color: #1e293b;}
+
+body.light-mode::before, body.light-mode::after { opacity: 0.2 !important;}
+
+body.light-mode #weather {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode input {
+    background: #fff;
+    color: #1e293b;
+}
+
+/* CLEAR BUTTONS */
+.clear-btn {
+    font-family: "Jersey 10", cursive;
+    background: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: auto;
+    display: inline-block;
+}
+
+/* WEATHER ANIMATIONS CONTAINER */
+#weather-effects {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 24px;
+}
+
+/* RAIN DROP ANIMATION */
+.rain {
+    position: absolute;
+    background: var(--accent-color);
+    width: 2px;
+    top: -50px;
+    opacity: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 5px var(--accent-color);
+    animation: fall-rain linear infinite;
+}
+
+@keyframes fall-rain {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 0.7; }
+    80% { opacity: 0.7; }
+    100% { transform: translateY(1000px) translateX(50px); opacity: 0; }
+}
+/* SNOWFLAKE ANIMATION */
+.snow {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    top: -30px;
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    animation: fall-snow linear infinite, sway ease-in-out infinite alternate;
+}
+
+@keyframes fall-snow {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(1000px); opacity: 0; }
+}
+
+@keyframes sway {
+    0% { margin-left: -20px; }
+    100% { margin-left: 20px; }
+}

@@ -11,10 +11,13 @@
     <title>Niko's Weather App</title>
 </head>
 <body>
-
+<div class="theme-switch" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+</div>
 <h1>Niko's Weather App</h1>
 
 <div id="weather">
+    <div id="weather-effects"></div>
 
     <div class="input-group">
         <input type="text" id="cityInput" placeholder="Enter city name">
@@ -28,15 +31,17 @@
         <div class="list-section">
             <h4>Favorites
                 <span>
+                    <button class="clear-btn" onclick="clearList('favorites')">Clear</button>
                     <span id="setDefault" title="Set current as Home" onclick="setDefaultCity()">🏠</span>
                     <span id="addFavorite" onclick="toggleFavorite()">★</span>
                 </span>
             </h4>
             <div id="favoritesList" class="chip-container"></div>
         </div>
-
         <div class="list-section">
-            <h4>Recent</h4>
+            <h4>Recent
+                <button class="clear-btn" onclick="clearList('recents')">Clear</button>
+            </h4>
             <div id="recentList" class="chip-container"></div>
         </div>
     </div>
