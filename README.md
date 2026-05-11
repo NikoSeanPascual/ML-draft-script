@@ -94,8 +94,8 @@ const apiKey = "YOUR_API_KEY_HERE";
     * Default city on load  ✅ FINISHED 05/09/26
     * Multiple city comparison view ✅ FINISHED 05/09/26
 4. 🎨 UI / UX Improvements 
-    * Dark / Light mode toggle 
-    * Animated weather effects (rain, snow, clouds) 
+    * Dark / Light mode toggle ✅ FINISHED 05/11/26
+    * Animated weather effects (rain, snow, clouds)  ✅ FINISHED 05/11/26
     * Smooth loading skeleton UI
     * Weather-based icons and backgrounds
     * Responsive design improvements
