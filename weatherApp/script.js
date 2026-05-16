@@ -625,3 +625,4 @@ async function fetchWeatherByCity(city) {
     }
 }
 initApp();
+
