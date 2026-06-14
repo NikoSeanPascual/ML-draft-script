@@ -1,0 +1,981 @@
+{
+  "TANK_ENGAGERS": [
+    {
+      "name": "Akai",
+      "archetype": "disengage",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Atlas",
+      "archetype": "aoe_cc",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Barats",
+      "archetype": "sustain_frontline",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS",
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Baxia",
+      "archetype": "anti_heal",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Belerick",
+      "archetype": "taunt_counter_dps",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Franco",
+      "archetype": "single_pick",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Gloo",
+      "archetype": "sustain_frontline",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Grock",
+      "archetype": "anti_cc",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Hylos",
+      "archetype": "sustain_frontline",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Johnson",
+      "archetype": "global_engage",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "MAGES_MID"
+      ]
+    },
+    {
+      "name": "Khufra",
+      "archetype": "anti_dash",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Marcel",
+      "archetype": "sustain_frontline",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Minotaur",
+      "archetype": "aoe_cc",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Tigreal",
+      "archetype": "aoe_cc",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Uranus",
+      "archetype": "sustain_frontline",
+      "primary_role": "TANK_ENGAGERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    }
+  ],
+  "FIGHTERS_EXP": [
+    {
+      "name": "Aldous",
+      "archetype": "late_scaling_burst",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Alpha",
+      "archetype": "sustain_frontline",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Alucard",
+      "archetype": "sustain_damage",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Argus",
+      "archetype": "sustain_immortal",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Arlott",
+      "archetype": "dash_heavy",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS",
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Aulus",
+      "archetype": "late_scaling_dps",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Badang",
+      "archetype": "burst_cc",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Balmond",
+      "archetype": "execute_sustain",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Bane",
+      "archetype": "aoe_poke",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "MAGES_MID",
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Chou",
+      "archetype": "single_pick",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS",
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Cici",
+      "archetype": "sustain_kite",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Dyrroth",
+      "archetype": "shredder",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Fredrinn",
+      "archetype": "sustain_taunt",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS",
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Freya",
+      "archetype": "sustain_frontline",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Gatotkaca",
+      "archetype": "aoe_cc",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Guinevere",
+      "archetype": "aoe_cc",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Hilda",
+      "archetype": "bush_ambush",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Jawhead",
+      "archetype": "single_pick",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS",
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Julian",
+      "archetype": "dive_burst",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "MAGES_MID",
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Khaleed",
+      "archetype": "early_aoe_burst",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Lapu-Lapu",
+      "archetype": "dive_burst",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Leomord",
+      "archetype": "mounted_cleanup",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Lukas",
+      "archetype": "combo_brawler",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Martis",
+      "archetype": "anti_cc",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Masha",
+      "archetype": "objective_shredder",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Minsitthar",
+      "archetype": "anti_dash",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Paquito",
+      "archetype": "dive_burst",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Phoveus",
+      "archetype": "anti_dash",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Roger",
+      "archetype": "hybrid_cleanup",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "MARKSMEN_GOLD",
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Ruby",
+      "archetype": "aoe_cc",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Silvanna",
+      "archetype": "single_target_lock",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Sora",
+      "archetype": "dive_burst",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Sun",
+      "archetype": "clone_pusher",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Terizla",
+      "archetype": "aoe_cc",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Thamuz",
+      "archetype": "sustain_frontline",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "X.Borg",
+      "archetype": "true_damage_shield",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Yin",
+      "archetype": "arena_isolation",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Yu Zhong",
+      "archetype": "sustain_frontline",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": []
+    },
+    {
+      "name": "Zilong",
+      "archetype": "attack_speed_scaling",
+      "primary_role": "FIGHTERS_EXP",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    }
+  ],
+  "ASSASSINS_JUNGLERS": [
+    {
+      "name": "Aamon",
+      "archetype": "dive_burst",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Benedetta",
+      "archetype": "dash_heavy",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Fanny",
+      "archetype": "dash_heavy",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Gusion",
+      "archetype": "dive_burst",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "MAGES_MID"
+      ]
+    },
+    {
+      "name": "Hanzo",
+      "archetype": "safe_distance_dps",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Hayabusa",
+      "archetype": "dive_burst",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Helcurt",
+      "archetype": "silence_burst",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Joy",
+      "archetype": "dash_heavy",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Karina",
+      "archetype": "cleanup_burst",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Lancelot",
+      "archetype": "dash_heavy",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Ling",
+      "archetype": "dash_heavy",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Natalia",
+      "archetype": "stealth_ambush",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Nolan",
+      "archetype": "dive_burst",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Saber",
+      "archetype": "single_pick",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Suyou",
+      "archetype": "stance_switcher",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Yi Sun-shin",
+      "archetype": "hybrid_jungle",
+      "primary_role": "ASSASSINS_JUNGLERS",
+      "secondary_roles": [
+        "MARKSMEN_GOLD"
+      ]
+    }
+  ],
+  "MAGES_MID": [
+    {
+      "name": "Alice",
+      "archetype": "sustain_frontline",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "TANK_ENGAGERS",
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Aurora",
+      "archetype": "aoe_cc",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Cecilion",
+      "archetype": "immobile_scaling",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Chang'e",
+      "archetype": "dps_poke",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "MARKSMEN_GOLD"
+      ]
+    },
+    {
+      "name": "Cyclops",
+      "archetype": "sustain_poke",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Esmeralda",
+      "archetype": "shield_absorber",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Eudora",
+      "archetype": "single_pick",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Gord",
+      "archetype": "dps_poke",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Harley",
+      "archetype": "single_pick_burst",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Harith",
+      "archetype": "dash_heavy_dps",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "MARKSMEN_GOLD"
+      ]
+    },
+    {
+      "name": "Kagura",
+      "archetype": "burst_poke",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Kadita",
+      "archetype": "dive_burst",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "TANK_ENGAGERS",
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Luo Yi",
+      "archetype": "grouped_punisher",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Lunox",
+      "archetype": "tank_shredder",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS",
+        "MARKSMEN_GOLD"
+      ]
+    },
+    {
+      "name": "Lylia",
+      "archetype": "dps_poke",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "MARKSMEN_GOLD"
+      ]
+    },
+    {
+      "name": "Nana",
+      "archetype": "zone_control",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Novaria",
+      "archetype": "long_range_sniper",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Odette",
+      "archetype": "aoe_channeled",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Pharsa",
+      "archetype": "aoe_channeled",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Selena",
+      "archetype": "long_range_cc",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Vale",
+      "archetype": "burst_cc",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Valir",
+      "archetype": "anti_engage",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    },
+    {
+      "name": "Valentina",
+      "archetype": "utility_mimic",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Vexana",
+      "archetype": "zone_control",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Xavier",
+      "archetype": "immobile_scaling",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Yve",
+      "archetype": "aoe_channeled",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Zetian",
+      "archetype": "zone_control",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": []
+    },
+    {
+      "name": "Zhask",
+      "archetype": "spawn_defense",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Zhuxin",
+      "archetype": "zone_control",
+      "primary_role": "MAGES_MID",
+      "secondary_roles": [
+        "SUPPORTS"
+      ]
+    }
+  ],
+  "MARKSMEN_GOLD": [
+    {
+      "name": "Beatrix",
+      "archetype": "versatile_dps",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Brody",
+      "archetype": "burst_poke",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Bruno",
+      "archetype": "crit_scaling",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Claude",
+      "archetype": "dash_heavy",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Clint",
+      "archetype": "burst_poke",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Edith",
+      "archetype": "sustain_scaling",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Granger",
+      "archetype": "burst_poke",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Hanabi",
+      "archetype": "immobile_scaling",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Irithel",
+      "archetype": "mobile_aoe_dps",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Ixia",
+      "archetype": "aoe_channeled",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Karrie",
+      "archetype": "shredder",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": [
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Kimmy",
+      "archetype": "run_and_gun",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS",
+        "MAGES_MID"
+      ]
+    },
+    {
+      "name": "Layla",
+      "archetype": "immobile_scaling",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Lesley",
+      "archetype": "single_pick_burst",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Melissa",
+      "archetype": "anti_dive_dps",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Miya",
+      "archetype": "attack_speed_scaling",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Moskov",
+      "archetype": "dash_heavy",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Natan",
+      "archetype": "magic_scaling_dps",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Obsidia",
+      "archetype": "antihero_burst",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    },
+    {
+      "name": "Popol and Kupa",
+      "archetype": "vision_control",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Wanwan",
+      "archetype": "dash_heavy",
+      "primary_role": "MARKSMEN_GOLD",
+      "secondary_roles": []
+    }
+  ],
+  "SUPPORTS": [
+    {
+      "name": "Angela",
+      "archetype": "pocket_buff",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "MAGES_MID"
+      ]
+    },
+    {
+      "name": "Carmilla",
+      "archetype": "damage_sharing_cc",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Chip",
+      "archetype": "global_teleport_cc",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Diggie",
+      "archetype": "anti_cc",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "MAGES_MID"
+      ]
+    },
+    {
+      "name": "Estes",
+      "archetype": "pocket_buff",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Faramis",
+      "archetype": "anti_burst",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "MAGES_MID"
+      ]
+    },
+    {
+      "name": "Floryn",
+      "archetype": "pocket_buff",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Kaja",
+      "archetype": "single_pick",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "TANK_ENGAGERS",
+        "FIGHTERS_EXP"
+      ]
+    },
+    {
+      "name": "Kalea",
+      "archetype": "engage_healer",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": []
+    },
+    {
+      "name": "Lolita",
+      "archetype": "projectile_block",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "TANK_ENGAGERS"
+      ]
+    },
+    {
+      "name": "Mathilda",
+      "archetype": "disengage",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": [
+        "ASSASSINS_JUNGLERS"
+      ]
+    },
+    {
+      "name": "Rafaela",
+      "archetype": "pocket_buff",
+      "primary_role": "SUPPORTS",
+      "secondary_roles": []
+    }
+  ]
+}

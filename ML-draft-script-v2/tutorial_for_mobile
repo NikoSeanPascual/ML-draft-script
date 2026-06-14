@@ -1,0 +1,65 @@
+🛠️ Phase 1: Environment & Phone Setup
+
+Step 1: Install ADB on your Computer
+If you haven't already, your system needs the standalone Android Debug Bridge platform tools.
+1.Download the official SDK Platform-Tools for Windows/Mac directly from Google.
+2.Extract the ZIP folder to a safe place (e.g., C:\platform-tools).
+3.Add that path to your computer’s System Environment Variables under Path so your terminal recognizes the adb command from any directory.
+4.Open a command prompt and type adb version to confirm it works.
+
+Step 2: Prepare Your Phone
+1.Go to your phone’s Settings > About Phone and tap Build Number 7 times until it says "You are now a developer!"
+2.Back out and open the newly unlocked Developer Options menu.
+3.Turn on USB Debugging.
+4.(Crucial for automation) Turn on USB Debugging (Security settings) if your phone has it (common on Xiaomi/Oppo/Vivo). This setting explicitly grants ADB permission to simulate hardware input taps and type text strings remotely.
+
+📐 Phase 2: Precise Screen Calibration
+
+Because every phone screen features a slightly different aspect ratio (e.g., 16:9, 19.5:9, 20:9), your template-matching bounding boxes must line up perfectly with your phone's real UI elements.
+
+Step 3: Turn on Coordinate Overlays
+1.Inside your phone’s Developer Options, scroll down and enable Pointer Location.
+2.This places a status bar at the very top of your glass display showing live $X$ and $Y$ coordinates whenever and wherever you press down.
+
+Step 4: Map the Enemy Draft Slots
+1.Boot up MLBB on your phone, navigate to Custom > Draft Pick, and fill the game slots with 9 Computer AI bots so you have infinite time to inspect the layout.
+2.Press your finger to the Top-Left corner of the first enemy avatar slot at the top right of the screen. Look at the top status bar and write down the exact (X, Y) values.
+3.Press your finger to the Bottom-Right corner of that same slot. Write down those (X, Y) values.
+4.Convert those absolute numbers into decimals based on your phone's total width and height. For instance, if your phone is 2400 \times 1080, and your top-left corner box registers at X=2112, Y=162:
+                      2112
+        X_Start_Pct = ____ = 0.88
+                      2400
+
+                      162
+        Y_Start_Pct = ---- = 0.15
+                      1080
+5.Open your updated adb_bot.py script and drop those calculated decimals into your self.enemy_slots_pct array! Do this for all 5 slots.
+
+🚀 Phase 3: Running the Full Live System
+Now that the physical elements are perfectly calibrated, you can run your data streams simultaneously.
+
+Step 5: Start the Streamlit Visual Dashboard
+Open a dedicated terminal window on your PC, navigate directly to your code directory, and boot up your local interface framework:
+
+* streamlit run app.py
+
+This launches your web browser tracker interface locally on http://localhost:8501. Keep this window open on half of your monitor.
+
+Step 6: Connect and Launch the Hardware Bot
+1.Connect your phone to your PC via a USB cable.
+2.Open a terminal window and verify the tethering bridge state:
+* adb devices
+
+*(If it says "Unauthorized", check your phone screen and tap "Always allow from this computer".)*
+3. Run your primary background monitoring script:
+   ```bash
+python adb_bot.py
+
+1. Look at the terminal window. It should print out your phone's active hardware resolution specs and output: 🚀 System initialized and operational. Ready for draft lobby...
+
+🧪 Phase 4: Testing & Calibration
+Step 7: Play a Verification Bot Match
+1. Start up a Custom Draft Pick match inside MLBB against the AI.
+2. Let an enemy bot lock in a hero.
+3. Watch your adb_bot.py terminal console. It should instantly print out a notification statement like: 🔍 CV Discovery: New enemy locked in draft -> Zhask.
+4.Head over to your browser window and click Sync Live Device Detections. The Streamlit dashboard will update instantaneously, filtering out your counters and highlighting the absolute highest tier synergy recommendation picks at the bottom!
