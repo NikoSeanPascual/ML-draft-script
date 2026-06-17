@@ -16,19 +16,21 @@ class MLBBHardwareBot:
         self.screen_height = 1080
         self._calibrate_screen_resolution()
 
+        # Exact percentage scales matching the Tecno Spark 6 (20.5:9 ratio)
         self.coords_pct = {
-            "search_bar": (0.26, 0.14),
-            "first_hero_slot": (0.13, 0.28),
-            "confirm_button": (0.85, 0.88)
+            "search_bar": (0.34, 0.14),  # Pushed inward slightly more due to the narrow screen height
+            "first_hero_slot": (0.18, 0.28),  # Shifted right to catch the first hero grid icon cleanly
+            "confirm_button": (0.80, 0.88)  # Shifted left away from the edge bezel zone
         }
 
-        # Bounding boxes for tracking enemy draft picks
+        # The 5 Enemy Slots tracking boxes
+        # On a 20.5:9 screen, the draft portrait slots sit cleanly between 82% and 90% of your screen width
         self.enemy_slots_pct = [
-            (0.88, 0.15, 0.96, 0.25),
-            (0.88, 0.27, 0.96, 0.37),
-            (0.88, 0.39, 0.96, 0.49),
-            (0.88, 0.51, 0.96, 0.61),
-            (0.88, 0.63, 0.96, 0.73),
+            (0.82, 0.15, 0.90, 0.25),  # Slot 1 Bounding Box
+            (0.82, 0.27, 0.90, 0.37),  # Slot 2 Bounding Box
+            (0.82, 0.39, 0.90, 0.49),  # Slot 3 Bounding Box
+            (0.82, 0.51, 0.90, 0.61),  # Slot 4 Bounding Box
+            (0.82, 0.63, 0.90, 0.73),  # Slot 5 Bounding Box
         ]
 
     def _execute_adb(self, command):
