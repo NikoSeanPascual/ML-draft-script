@@ -92,13 +92,30 @@ class MLBBHardwareBot:
                 template_path = os.path.join(self.templates_dir, file)
                 template = cv2.imread(template_path, 0)
 
-                if template is None or template.shape[0] > gray_slot.shape[0] or template.shape[1] > gray_slot.shape[1]:
+                if template is None:
                     continue
+
+                slot_h, slot_w = gray_slot.shape[:2]
+                temp_h, temp_w = template.shape[:2]
+
+                if temp_h > slot_h or temp_w > slot_w:
+                    # Scale the template down to fit comfortably inside the slot (e.g., matching the slot's height)
+                    scale_factor = (slot_h - 4) / temp_h  # Leave a tiny 4-pixel buffer margin
+                    new_w = int(temp_w * scale_factor)
+                    new_h = int(temp_h * scale_factor)
+
+                    # Double safety check to ensure it doesn't exceed width limits either
+                    if new_w > slot_w:
+                        scale_factor = (slot_w - 4) / temp_w
+                        new_w = int(temp_w * scale_factor)
+                        new_h = int(temp_h * scale_factor)
+
+                    template = cv2.resize(template, (new_w, new_h), interpolation=cv2.INTER_AREA)
 
                 res = cv2.matchTemplate(gray_slot, template, cv2.TM_CCOEFF_NORMED)
                 _, max_val, _, _ = cv2.minMaxLoc(res)
 
-                if max_val >= 0.82:  # Slight adjustment for varying screen resolutions
+                if max_val >= 0.75:  # Lowered slightly from 0.82 to account for resolution stretching distortion
                     hero_name = file.replace('.png', '').lower()
                     detected_this_tick.append(hero_name)
                     break
